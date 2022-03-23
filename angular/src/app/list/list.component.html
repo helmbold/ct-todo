@@ -1,0 +1,19 @@
+<ng-container
+  *ngIf="list$ | async as list"
+>
+  <h1>{{ list.title }}</h1>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="edit()"
+  >
+    Neue Aufgabe
+  </button>
+  <app-task
+    *ngFor="let task of list.tasks"
+    [task]="task"
+    (toggle)="update(task)"
+    (edit)="edit(task)"
+    (delete)="delete(task)"
+  ></app-task>
+</ng-container>

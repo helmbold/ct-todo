@@ -1,0 +1,10 @@
+p:hover
+  > button:nth-last-of-type(-n + 2) {
+  visibility: visible;
+}
+p > button:nth-last-of-type(-n + 2) {
+  visibility: hidden;
+}
+.done {
+  text-decoration: line-through;
+}

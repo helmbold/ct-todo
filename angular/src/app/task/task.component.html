@@ -1,0 +1,40 @@
+<p [ngClass]="{ done: task.isDone }">
+  <button
+    mat-icon-button
+    (click)="doneClicked()"
+  >
+    <mat-icon *ngIf="task.isDone"
+      >task_alt</mat-icon
+    >
+    <mat-icon *ngIf="!task.isDone"
+      >radio_button_unchecked</mat-icon
+    >
+  </button>
+  {{ task.title }}
+  <span
+    *ngIf="task.dueDate"
+    style="color: grey"
+  >
+    <mat-icon
+      style="vertical-align: middle"
+      >event</mat-icon
+    >
+    {{
+      task.dueDate
+        ?.toString()
+        ?.slice(0, 10)
+    }}
+  </span>
+  <button
+    mat-button
+    (click)="editClicked()"
+  >
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button
+    mat-button
+    (click)="deleteClicked()"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</p>

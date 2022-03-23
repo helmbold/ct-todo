@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>
+  {{
+    task.id === 0
+      ? "Neue Aufgabe"
+      : "Aufgabe bearbeiten"
+  }}
+</h2>
+<form #editForm="ngForm">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Aufgabe"
+        [(ngModel)]="task.title"
+        name="title"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label
+        >Fälligkeit</mat-label
+      >
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="task.dueDate"
+        name="dueDate"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="picker"
+      >
+      </mat-datepicker-toggle>
+      <mat-datepicker
+        #picker
+      ></mat-datepicker>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button
+      mat-flat-button
+      [mat-dialog-close]="task"
+      type="submit"
+      [disabled]="editForm.invalid"
+      color="primary"
+      class="button"
+    >
+      Speichern
+    </button>
+    <button
+      mat-flat-button
+      mat-dialog-close
+    >
+      Verwerfen
+    </button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,10 @@
+mat-sidenav-container {
+  height: calc(100% - 64px);
+  width: 100%;
+}
+mat-sidenav-content {
+  padding: 24px;
+}
+form {
+  margin: 16px;
+}
