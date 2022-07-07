@@ -1,4 +1,4 @@
-package com.example.todo.apapter.jpa
+package com.example.todo.adapter.jpa
 
 import com.example.todo.domain.Task
 import com.example.todo.domain.TaskRepository
